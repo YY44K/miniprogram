@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="page">
+  <view>
+    
+
+          <text align="center">点击按钮授权用户信息</text>
+          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn" type="primary">获取头像昵称</button>
+
+
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+  </view>
+  <view>
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
